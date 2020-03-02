@@ -15,10 +15,10 @@ class Start extends React.Component {
                 <DemoNavbar {...this.props} />
                 <div className="contentStart">
                     <center>
-                        <h1>FREE ELECTRICITY</h1>
-                        <img width="854" height="480" src="https://thumbs.gfycat.com/PhysicalNextArcherfish-size_restricted.gif" alt="description"></img>
+                        <h1>El Mejor Servicio a tu Alcance</h1>
+                        <img width="744" height="490" src="https://www.mercapava.com.co/wp-content/uploads/2016/10/Tip-5.jpg" alt="description"></img>
                         <br></br>
-                        <Link className="btn btn-danger" to="/getBill">Download you Bill!</Link>
+                        <Link className="btn btn-danger" to="/getBill">Download your Bill!</Link>
                     </center>
                 </div>
             </div>

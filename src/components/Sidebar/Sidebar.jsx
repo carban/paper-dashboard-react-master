@@ -22,7 +22,7 @@ import { Nav } from "reactstrap";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 
-import logo from "logo.svg";
+import logo from "logo.png";
 
 var ps;
 
@@ -58,7 +58,7 @@ class Sidebar extends React.Component {
       >
         <div className="logo">
           <a
-            href="https://www.creative-tim.com"
+            href="/"
             className="simple-text logo-mini"
           >
             <div className="logo-img">
@@ -66,7 +66,7 @@ class Sidebar extends React.Component {
             </div>
           </a>
           <a
-            href="https://www.creative-tim.com"
+            href="/"
             className="simple-text logo-normal"
           >
             energyCorp

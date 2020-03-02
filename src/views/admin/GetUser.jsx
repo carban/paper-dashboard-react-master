@@ -20,109 +20,135 @@ class GetUser extends React.Component {
                     lastname: 'pirlo',
                     email: 'murillo.carlos@correounivalle.edu.co',
                     adress: 'sdsds',
-                    phone: 'dfdfdfd',
+                    phone: 3001234567,
                     sex: 'Male',
                     date: '2020-02-26',
-                    type: 'Operador'
+                    type: 'Cliente',
+                    client: {
+                        typeCli: 'Natural',
+                        tasa_interes_Mora: 2.0,
+                        ciclo: 1,
+                        contrato: '1001',
+                        facturacion: '3343442',
+                        estado_financiero: 'Mora',
+                        ID_contador: '100021',
+                    }
                 },
                 {
                     ID: 232,
-                    name: 'charles',
-                    lastname: 'pirlo',
+                    name: 'Aida',
+                    lastname: 'Merlano',
                     email: 'messi.carlos@correounivalle.edu.co',
                     adress: 'sdsds',
-                    phone: 'dfdfdfd',
-                    sex: 'Male',
+                    phone: 3001234567,
+                    sex: 'Female',
                     date: '2020-02-26',
-                    type: 'Operador'
+                    type: 'Operador',
+                    client: {}
                 },
                 {
                     ID: 233,
-                    name: 'werwe',
-                    lastname: 'pirlo',
+                    name: 'James',
+                    lastname: 'Rodriguez',
                     email: 'james.carlos@correounivalle.edu.co',
                     adress: 'sdsds',
-                    phone: 'dfdfdfd',
+                    phone: 3001234567,
                     sex: 'Female',
                     date: '2020-02-26',
-                    type: 'Operador'
+                    type: 'Operador',
+                    client: {}
                 },
                 {
                     ID: 344,
-                    name: 'charles',
-                    lastname: 'pirlo',
+                    name: 'Trevor',
+                    lastname: 'Philips',
                     email: 'ronaldo@cristiano.com',
                     adress: 'sdsds',
-                    phone: 'dfdfdfd',
+                    phone: 3001234567,
                     sex: 'Male',
                     date: '2020-02-26',
-                    type: 'Gerente'
+                    type: 'Gerente',
+                    client: {}
                 },
                 {
                     ID: 345,
-                    name: 'chaertertreterles',
-                    lastname: 'pirlo',
+                    name: 'Duvan',
+                    lastname: 'vergara',
                     email: 'zlatan@correounivalle.edu.co',
                     adress: 'sdsds',
-                    phone: 'dfdfdfd',
+                    phone: 3001234567,
                     sex: 'Female',
                     date: '2020-02-26',
-                    type: 'Operador'
+                    type: 'Operador',
+                    client: {}
                 },
                 {
                     ID: 346,
-                    name: 'rtertete',
-                    lastname: 'pirlo',
+                    name: 'Reinaldo',
+                    lastname: 'Rueda',
                     email: 'rodallega@correounivalle.edu.co',
                     adress: 'sdsds',
-                    phone: 'dfdfdfd',
+                    phone: 3001234567,
                     sex: 'Female',
                     date: '2020-02-26',
-                    type: 'Operador'
+                    type: 'Operador',
+                    client: {}
                 },
                 {
                     ID: 347,
                     name: 'charles',
-                    lastname: 'pirlo',
+                    lastname: 'Perez',
                     email: 'maradona@gmail.com',
                     adress: 'sdsds',
-                    phone: 'dfdfdfd',
+                    phone: 3001234567,
                     sex: 'Male',
                     date: '2020-02-26',
-                    type: 'Gerente'
+                    type: 'Gerente',
+                    client: {}
                 },
                 {
                     ID: 457,
-                    name: 'charles',
-                    lastname: 'pirlo',
+                    name: 'Mariana',
+                    lastname: 'Pajon',
                     email: 'modric@gmail.com',
                     adress: 'sdsds',
-                    phone: 'dfdfdfd',
+                    phone: 3001234567,
                     sex: 'Male',
                     date: '2020-02-26',
-                    type: 'Operador'
+                    type: 'Operador',
+                    client: {}
                 },
                 {
                     ID: 458,
-                    name: 'charles',
-                    lastname: 'pirlo',
+                    name: 'Quentin',
+                    lastname: 'Tarantino',
                     email: 'suarez@gmail.com',
                     adress: 'sdsds',
-                    phone: 'dfdfdfd',
+                    phone: 3001234567,
                     sex: 'Male',
                     date: '2020-02-26',
-                    type: 'Gerente'
+                    type: 'Gerente',
+                    client: {}
                 },
                 {
                     ID: 569,
-                    name: 'charles',
-                    lastname: 'pirlo',
+                    name: 'Bong',
+                    lastname: 'Jonh Jo',
                     email: 'parasite@gmail.com',
                     adress: 'sdsds',
-                    phone: 'dfdfdfd',
+                    phone: 3001234567,
                     sex: 'Male',
                     date: '2020-02-26',
-                    type: 'Gerente'
+                    type: 'Cliente',
+                    client: {
+                        typeCli: 'Juridica',
+                        tasa_interes_Mora: 2.0,
+                        ciclo: 1,
+                        contrato: '1001',
+                        facturacion: '3343442',
+                        estado_financiero: 'Mora',
+                        ID_contador: '330021',
+                    }
                 },
             ],
             search: '',
@@ -201,6 +227,7 @@ class GetUser extends React.Component {
                                                 <option>All</option>
                                                 <option>Operador</option>
                                                 <option>Gerente</option>
+                                                <option>Cliente</option>
                                             </select>
                                         </Col>
                                         <Col>

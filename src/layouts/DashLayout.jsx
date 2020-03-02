@@ -33,7 +33,7 @@ class DashLayout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      backgroundColor: "black",
+      backgroundColor: "green",
       activeColor: "warning"
     };
     this.mainPanel = React.createRef();
@@ -76,14 +76,14 @@ class DashLayout extends React.Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <div className="wrapper animated fadeIn slow">
         <Sidebar
           {...this.props}
           routes={this.props.routes}
-          // bgColor={this.state.backgroundColor}
+          bgColor={this.state.backgroundColor}
           activeColor={this.getActiveColor()}
         />
-        <div className="main-panel" ref={this.mainPanel}>
+        <div className="main-panel animated zoomInDown" ref={this.mainPanel}>
           <DemoNavbar {...this.props} routes={this.props.routes} />
           <Switch>
             {this.props.routes.map((prop, key) => {

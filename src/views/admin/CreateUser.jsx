@@ -42,14 +42,14 @@ class CreateUser extends React.Component {
         if (news.length !== 0) {
             news = this.state.list.map((n, key) => {
                 return (
-                    <Alert color="primary" key={key} toggle={() => this.onDismiss(key)}>
+                    <Alert color="success" key={key} toggle={() => this.onDismiss(key)}>
                         #{key + 1} <b>{n.name} {n.lastname}</b> - {n.ID}
                         <br></br>
                         <i>{n.type}</i>
                     </Alert>
                 )
             })
-        }else{
+        } else {
             news = <center><h6><i>No users yet</i></h6></center>;
         }
 
@@ -59,7 +59,7 @@ class CreateUser extends React.Component {
                     <Col md="6" >
                         <Card>
                             <CardBody>
-                                <CreateUserForm submitAction={this.createEle} />
+                                <CreateUserForm submitAction={this.createEle} editMode={true} />
                             </CardBody>
                         </Card>
                     </Col>

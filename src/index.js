@@ -26,6 +26,8 @@ import "assets/scss/paper-dashboard.scss?v=1.1.0";
 import "assets/demo/demo.css";
 import "assets/css/index.css";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
+import "assets/css/animate.css";
+import "assets/css/login.css";
 
 import App from 'App.js';
 

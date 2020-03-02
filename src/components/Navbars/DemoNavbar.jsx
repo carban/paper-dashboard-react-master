@@ -202,15 +202,6 @@ class Header extends React.Component {
               </DropdownMenu>
             </Dropdown>
             <NavItem>
-              {/* ||||||||||||||||||||||||| LOGOUT |||||||||||||||||||||||||*/}
-              {/* <div className="nav-link btn-rotate" onClick={() => {
-                  auth.logout(() => { this.props.history.push("/login") })
-                }}>
-                  <i className="nc-icon nc-settings-gear-65" />
-                  <p>
-                    <span className="d-lg-none d-md-block">Account</span>
-                  </p>
-                </div> */}
             {loggedInBtn}
             </NavItem>
           </Nav>
