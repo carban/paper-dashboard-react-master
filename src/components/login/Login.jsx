@@ -42,14 +42,14 @@ class Login extends React.Component {
 
     signin = e => {
         e.preventDefault();
-
+        const delay = 800;
         if (this.state.username === '100') {
 
             auth.login(rou => {
                 this.setState({ doAnime: true });
                 window.setTimeout(() => {
                     this.props.history.push("/" + rou)
-                }, 500);
+                }, delay);
 
             }, "admin");
         } else if (this.state.username === '200') {
@@ -58,7 +58,7 @@ class Login extends React.Component {
                 this.setState({ doAnime: true });
                 window.setTimeout(() => {
                     this.props.history.push("/" + rou)
-                }, 500);
+                }, delay);
 
             }, "operator");
 
@@ -68,7 +68,7 @@ class Login extends React.Component {
                 this.setState({ doAnime: true });
                 window.setTimeout(() => {
                     this.props.history.push("/" + rou)
-                }, 500);
+                }, delay);
 
             }, "manager");
 
