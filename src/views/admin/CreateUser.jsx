@@ -1,5 +1,6 @@
 import React from "react";
 import CreateUserForm from "views/admin/CreateUserForm.jsx";
+import axios from "axios";
 
 // reactstrap components
 import {
@@ -33,7 +34,11 @@ class CreateUser extends React.Component {
 
     sendNews = () => {
         // AXIOS
-        alert("Axios");
+        // console.log(this.state.list[0]);
+        // alert("Axios");
+        for (let i = 0; i < this.state.list.length; i++) {
+            axios.post("http://localhost:8000/api/user/create/", this.state.list[i]);
+        }
         this.setState({ list: [] });
     }
 
@@ -43,7 +48,7 @@ class CreateUser extends React.Component {
             news = this.state.list.map((n, key) => {
                 return (
                     <Alert color="success" key={key} toggle={() => this.onDismiss(key)}>
-                        #{key + 1} <b>{n.name} {n.lastname}</b> - {n.ID}
+                        #{key + 1} <b>{n.name}</b> - {n.id_user}
                         <br></br>
                         <i>{n.type}</i>
                     </Alert>

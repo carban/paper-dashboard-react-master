@@ -24,6 +24,7 @@ import Typography from "views/Typography.jsx";
 import TableList from "views/Tables.jsx";
 import Maps from "views/Map.jsx";
 import UserPage from "views/User.jsx";
+// import UserPage from "views/TransformersMap.jsx";
 import UpgradeToPro from "views/Upgrade.jsx";
 
 var routes = [
@@ -75,7 +76,7 @@ var routes = [
     icon: "nc-icon nc-caps-small",
     component: Typography,
     layout: "/admin"
-  },
+  }
   // {
   //   pro: true,
   //   path: "/upgrade",

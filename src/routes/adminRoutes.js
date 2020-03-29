@@ -1,6 +1,6 @@
 import CreateUser from "views/admin/CreateUser.jsx";
 import GetUser from "views/admin/GetUser.jsx";
-
+import TransformersMap from "views/admin/TransformersMap.jsx";
 
 var adminRoutes = [
   {
@@ -15,6 +15,13 @@ var adminRoutes = [
     name: "getUser",
     icon: "nc-icon nc-pin-3",
     component: GetUser,
+    layout: "/admin"
+  },
+  {
+    path: "/transformersMap",
+    name: "Map",
+    icon: "nc-icon nc-pin-3",
+    component: TransformersMap,
     layout: "/admin"
   }
 ];
