@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Map, Marker, Popup, TileLayer, LayersControl, FeatureGroup, Circle, LayerGroup } from 'react-leaflet';
 import L from 'leaflet';
-import { Button, Input, Form, Row, Col, Label, FormGroup } from "reactstrap";
 
 class TransformersMap extends Component {
   constructor() {
@@ -28,7 +27,7 @@ class TransformersMap extends Component {
   }
 
   newPoint = (type) => {
-    if (type == "pos") {
+    if (type === "pos") {
       this.setState({ pos: [...this.state.pos, this.state.movingMarker] });
     } else {
       this.setState({ posSubs: [...this.state.posSubs, this.state.movingMarker] });
@@ -36,15 +35,15 @@ class TransformersMap extends Component {
   }
 
   removePoint = (key, type) => {
-
-    if (type == "pos") {
-      var newPos = [...this.state.pos];
-      newPos.splice(key, 1);
-      this.setState({ pos: newPos });
+      var copy;
+    if (type === "pos") {
+      copy = [...this.state.pos];
+      copy.splice(key, 1);
+      this.setState({ pos: copy });
     } else {
-      var newPos = [...this.state.posSubs];
-      newPos.splice(key, 1);
-      this.setState({ posSubs: newPos });
+      copy = [...this.state.posSubs];
+      copy.splice(key, 1);
+      this.setState({ posSubs: copy });
     }
 
   }
@@ -113,9 +112,9 @@ class TransformersMap extends Component {
       </Marker>)
     );
 
-    const Tbtn = this.state.block ? <Button onClick={() => this.newPoint("pos")} color="danger">T</Button> : false;
-    const Sbtn = this.state.blockSub ? <Button onClick={() => this.newPoint("posSubs")} color="danger">S</Button> : false ;
-    const newMaker = Tbtn == Sbtn ? <p>Check Layer</p> : <div>{Tbtn} {Sbtn}</div>;
+    const Tbtn = this.state.block ? <button onClick={() => this.newPoint("pos")} className="newTrans">TR</button> : false;
+    const Sbtn = this.state.blockSub ? <button onClick={() => this.newPoint("posSubs")} className="newSubs">SU</button> : false ;
+    const newMaker = Tbtn === Sbtn ? <p>Check Layer</p> : <div>{Tbtn}{Sbtn}</div>;
 
     return (
       <Map className="amapa" center={this.state.position} zoom={13} onClick={this.action} onoverlayadd={this.blockMarkers} onoverlayremove={this.blockMarkers}>

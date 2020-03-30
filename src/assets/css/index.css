@@ -28,3 +28,27 @@
   background-color: red;
   color: white;
 }
+
+.newTrans{
+  background-color: blue;
+  border-style: none;
+  border-radius: 30px;
+  font-size: 20px;
+  color: white;
+}
+
+.newTrans:hover{
+  background-color: darkturquoise;
+}
+
+.newSubs{
+  background-color: firebrick;
+  border-style: none;
+  border-radius: 30px;
+  font-size: 20px;
+  color: white;
+}
+
+.newSubs:hover{
+  background-color: coral;
+}
