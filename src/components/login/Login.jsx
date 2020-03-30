@@ -43,6 +43,7 @@ class Login extends React.Component {
     signin = e => {
         e.preventDefault();
         const delay = 800;
+        var data = {username: this.state.username, password: this.state.password};
         if (this.state.username === '100') {
 
             auth.login(rou => {

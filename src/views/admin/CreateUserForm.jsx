@@ -163,10 +163,6 @@ class CreateUserForm extends React.Component {
 
         </div> : true
 
-
-        // Return
-
-
         return (
             <Form id="form" onSubmit={this.handleSubmit}>
                 <FormGroup>
@@ -175,7 +171,7 @@ class CreateUserForm extends React.Component {
                         <select onChange={this.handleInput} value={this.state.type} className="form-control" name="type" required>
                             <option>Operador</option>
                             <option>Gerente</option>
-                            <option>Cliente</option>
+                            {/* <option>Cliente</option> */}
                         </select>
                         <Row>
                             <Col>
