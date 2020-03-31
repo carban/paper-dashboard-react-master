@@ -72,7 +72,8 @@ class CreateUserForm extends React.Component {
 
         if (this.state.type !== "Cliente") {
 
-            theState = { ...this.state, client: {} };
+            theState = { ...this.state };
+            delete theState.client;
             this.props.submitAction(theState);
         } else {
             theState = this.state;

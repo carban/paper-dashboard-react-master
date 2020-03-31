@@ -34,6 +34,20 @@ class CreateUser extends React.Component {
     sendNews = () => {
         // AXIOS
         alert("Axios");
+        var users = {operadores: null, gerentes: null};
+        var operadores = [];
+        var gerentes = [];
+        for (let i = 0; i < this.state.list.length; i++) {
+            let user = this.state.list[i];
+            if (user.type === 'operador') {
+                operadores.push(user);
+            }else{
+                gerentes.push(user);
+            }
+        }
+        users.operadores = operadores;
+        users.gerentes = gerentes;
+        console.log(users);
         this.setState({ list: [] });
     }
 
