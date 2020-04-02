@@ -21,7 +21,7 @@ class CreateUserForm extends React.Component {
             phone: '',
             date: '',
             state: true,
-            client: {
+            /*client: {
                 typeCli: 1,
                 tasa_interes_Mora: 2.0,
                 ciclo: 1,
@@ -29,7 +29,7 @@ class CreateUserForm extends React.Component {
                 facturacion: '',
                 estado_financiero: '',
                 ID_contador: '',
-            }
+            }*/
         }
     }
 
@@ -50,7 +50,7 @@ class CreateUserForm extends React.Component {
         });
     }
 
-    handleInputClient = e => {
+    /*handleInputClient = e => {
 
         var { client } = { ...this.state };
         client[e.target.name] = e.target.value;
@@ -59,7 +59,7 @@ class CreateUserForm extends React.Component {
             client: client
         });
         
-    }
+    }*/
 
     cleanForm = () => {
         document.getElementById("form").reset();
@@ -70,15 +70,15 @@ class CreateUserForm extends React.Component {
 
         var theState;
 
-        if (this.state.type !== "Cliente") {
+        //if (this.state.type !== "Cliente") {
 
             theState = { ...this.state };
             delete theState.client;
             this.props.submitAction(theState);
-        } else {
+        /*} else {
             theState = this.state;
             this.props.submitAction(theState);
-        }
+        }*/
 
         this.cleanForm();
 
@@ -95,7 +95,7 @@ class CreateUserForm extends React.Component {
             phone: '',
             date: '',
             state: true,
-            client: {
+            /*client: {
                 typeCli: 1,
                 tasa_interes_Mora: 2.0,
                 ciclo: 1,
@@ -103,7 +103,7 @@ class CreateUserForm extends React.Component {
                 facturacion: '',
                 estado_financiero: '',
                 ID_contador: '',
-            }
+            }*/
         });
     }
 
@@ -119,7 +119,7 @@ class CreateUserForm extends React.Component {
         </div> : true
 
         const aditional = (this.state.type === 'Cliente') ? <div>
-            <center style={{ marginTop: "2em" }}>Adtional Information</center>
+            <center style={{ marginTop: "2em" }}>Aditional Information</center>
 
             <Row>
                 <Col>
@@ -172,7 +172,7 @@ class CreateUserForm extends React.Component {
                         <select onChange={this.handleInput} value={this.state.type} className="form-control" name="type" required>
                             <option>Operador</option>
                             <option>Gerente</option>
-                            {/* <option>Cliente</option> */}
+                        {/* <option>Cliente</option> */}
                         </select>
                         <Row>
                             <Col>

@@ -22,7 +22,16 @@ class GetClients extends React.Component {
                     adress: 'sdsds',
                     phone: 'dfdfdfd',
                     sex: 'Male',
-                    date: '2020-02-26'
+                    date: '2020-02-26',
+                    client: {
+                        typeCli: 'Natural',
+                        tasa_interes_Mora: 2.0,
+                        ciclo: 1,
+                        contrato: '1001',
+                        facturacion: '3343442',
+                        estado_financiero: 'Mora',
+                        ID_contador: '100021',
+                    }
                 },
                 {
                     ID: 232,
@@ -32,7 +41,16 @@ class GetClients extends React.Component {
                     adress: 'sdsds',
                     phone: 'dfdfdfd',
                     sex: 'Male',
-                    date: '2020-02-26'
+                    date: '2020-02-26',
+                    client: {
+                        typeCli: 'Natural',
+                        tasa_interes_Mora: 2.0,
+                        ciclo: 1,
+                        contrato: '1001',
+                        facturacion: '3343442',
+                        estado_financiero: 'Mora',
+                        ID_contador: '100021',
+                    }
                 },
                 {
                     ID: 233,
@@ -42,7 +60,16 @@ class GetClients extends React.Component {
                     adress: 'sdsds',
                     phone: 'dfdfdfd',
                     sex: 'Female',
-                    date: '2020-02-26'
+                    date: '2020-02-26',
+                    client: {
+                        typeCli: 'Natural',
+                        tasa_interes_Mora: 2.0,
+                        ciclo: 1,
+                        contrato: '1001',
+                        facturacion: '3343442',
+                        estado_financiero: 'Mora',
+                        ID_contador: '100021',
+                    }
                 },
                 {
                     ID: 344,
@@ -52,7 +79,16 @@ class GetClients extends React.Component {
                     adress: 'sdsds',
                     phone: 'dfdfdfd',
                     sex: 'Male',
-                    date: '2020-02-26'
+                    date: '2020-02-26',
+                    client: {
+                        typeCli: 'Natural',
+                        tasa_interes_Mora: 2.0,
+                        ciclo: 1,
+                        contrato: '1001',
+                        facturacion: '3343442',
+                        estado_financiero: 'Mora',
+                        ID_contador: '100021',
+                    }
                 },
                 {
                     ID: 345,
@@ -62,7 +98,16 @@ class GetClients extends React.Component {
                     adress: 'sdsds',
                     phone: 'dfdfdfd',
                     sex: 'Female',
-                    date: '2020-02-26'
+                    date: '2020-02-26',
+                    client: {
+                        typeCli: 'Natural',
+                        tasa_interes_Mora: 2.0,
+                        ciclo: 1,
+                        contrato: '1001',
+                        facturacion: '3343442',
+                        estado_financiero: 'Mora',
+                        ID_contador: '100021',
+                    }
                 },
                 {
                     ID: 346,
@@ -72,7 +117,16 @@ class GetClients extends React.Component {
                     adress: 'sdsds',
                     phone: 'dfdfdfd',
                     sex: 'Female',
-                    date: '2020-02-26'
+                    date: '2020-02-26',
+                    client: {
+                        typeCli: 'Natural',
+                        tasa_interes_Mora: 2.0,
+                        ciclo: 1,
+                        contrato: '1001',
+                        facturacion: '3343442',
+                        estado_financiero: 'Mora',
+                        ID_contador: '100021',
+                    }
                 },
                 {
                     ID: 347,
@@ -82,7 +136,16 @@ class GetClients extends React.Component {
                     adress: 'sdsds',
                     phone: 'dfdfdfd',
                     sex: 'Male',
-                    date: '2020-02-26'
+                    date: '2020-02-26',
+                    client: {
+                        typeCli: 'Natural',
+                        tasa_interes_Mora: 2.0,
+                        ciclo: 1,
+                        contrato: '1001',
+                        facturacion: '3343442',
+                        estado_financiero: 'Mora',
+                        ID_contador: '100021',
+                    }
                 },
                 {
                     ID: 457,
@@ -92,7 +155,16 @@ class GetClients extends React.Component {
                     adress: 'sdsds',
                     phone: 'dfdfdfd',
                     sex: 'Male',
-                    date: '2020-02-26'
+                    date: '2020-02-26',
+                    client: {
+                        typeCli: 'Natural',
+                        tasa_interes_Mora: 2.0,
+                        ciclo: 1,
+                        contrato: '1001',
+                        facturacion: '3343442',
+                        estado_financiero: 'Mora',
+                        ID_contador: '100021',
+                    }
                 },
                 {
                     ID: 458,
@@ -102,7 +174,16 @@ class GetClients extends React.Component {
                     adress: 'sdsds',
                     phone: 'dfdfdfd',
                     sex: 'Male',
-                    date: '2020-02-26'
+                    date: '2020-02-26',
+                    client: {
+                        typeCli: 'Natural',
+                        tasa_interes_Mora: 2.0,
+                        ciclo: 1,
+                        contrato: '1001',
+                        facturacion: '3343442',
+                        estado_financiero: 'Mora',
+                        ID_contador: '100021',
+                    }
                 },
                 {
                     ID: 569,
@@ -112,7 +193,16 @@ class GetClients extends React.Component {
                     adress: 'sdsds',
                     phone: 'dfdfdfd',
                     sex: 'Male',
-                    date: '2020-02-26'
+                    date: '2020-02-26',
+                    client: {
+                        typeCli: 'Natural',
+                        tasa_interes_Mora: 2.0,
+                        ciclo: 1,
+                        contrato: '1001',
+                        facturacion: '3343442',
+                        estado_financiero: 'Mora',
+                        ID_contador: '100021',
+                    }
                 },
             ],
             search: '',
