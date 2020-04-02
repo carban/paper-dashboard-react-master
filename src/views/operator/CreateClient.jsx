@@ -34,6 +34,7 @@ class CreateClient extends React.Component {
     sendNews = () => {
         // AXIOS
         alert("Axios");
+        console.log(this.state.list);
         this.setState({ list: [] });
     }
 
@@ -60,7 +61,7 @@ class CreateClient extends React.Component {
                     <Col md="6" >
                         <Card>
                             <CardBody>
-                                <CreateClientForm submitAction={this.createEle} />
+                                <CreateClientForm submitAction={this.createEle} editMode={false}/>
                             </CardBody>
                         </Card>
                     </Col>

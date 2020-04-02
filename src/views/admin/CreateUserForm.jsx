@@ -11,9 +11,7 @@ class CreateUserForm extends React.Component {
         this.state = this.props.user || {
             type: 'operador',
             ID: '',
-            sex: 'Female',
             name: '',
-            lastname: '',
             email: '',
             adress: '',
             neighborhood: '',
@@ -21,15 +19,6 @@ class CreateUserForm extends React.Component {
             phone: '',
             date: '',
             state: true,
-            /*client: {
-                typeCli: 1,
-                tasa_interes_Mora: 2.0,
-                ciclo: 1,
-                contrato: '',
-                facturacion: '',
-                estado_financiero: '',
-                ID_contador: '',
-            }*/
         }
     }
 
@@ -50,17 +39,6 @@ class CreateUserForm extends React.Component {
         });
     }
 
-    /*handleInputClient = e => {
-
-        var { client } = { ...this.state };
-        client[e.target.name] = e.target.value;
-
-        this.setState({
-            client: client
-        });
-        
-    }*/
-
     cleanForm = () => {
         document.getElementById("form").reset();
     }
@@ -70,24 +48,16 @@ class CreateUserForm extends React.Component {
 
         var theState;
 
-        //if (this.state.type !== "Cliente") {
-
-            theState = { ...this.state };
-            delete theState.client;
-            this.props.submitAction(theState);
-        /*} else {
-            theState = this.state;
-            this.props.submitAction(theState);
-        }*/
+        theState = { ...this.state };
+        delete theState.client;
+        this.props.submitAction(theState);
 
         this.cleanForm();
 
         this.setState({
             type: 'operador',
             ID: '',
-            sex: 'Female',
             name: '',
-            lastname: '',
             email: '',
             adress: '',
             neighborhood: '',
@@ -95,15 +65,6 @@ class CreateUserForm extends React.Component {
             phone: '',
             date: '',
             state: true,
-            /*client: {
-                typeCli: 1,
-                tasa_interes_Mora: 2.0,
-                ciclo: 1,
-                contrato: '',
-                facturacion: '',
-                estado_financiero: '',
-                ID_contador: '',
-            }*/
         });
     }
 
@@ -111,7 +72,7 @@ class CreateUserForm extends React.Component {
 
         const addBtn = (!this.props.user) ? <Button color="success">Add</Button> : <Button color="success">Edit</Button>;
 
-        const showStateAttr = (!this.props.editMode) ? <div> <Label for="">Estado</Label>
+        const showStateAttr = this.props.editMode ? <div> <Label for="">Estado</Label>
             <select onChange={this.handleInput} value={this.state.state} className="form-control" name="state" required>
                 <option>Activo</option>
                 <option>Inactivo</option>
@@ -172,19 +133,11 @@ class CreateUserForm extends React.Component {
                         <select onChange={this.handleInput} value={this.state.type} className="form-control" name="type" required>
                             <option>Operador</option>
                             <option>Gerente</option>
-                        {/* <option>Cliente</option> */}
                         </select>
                         <Row>
                             <Col>
                                 <Label for="">ID</Label>
                                 <Input onChange={this.handleInput} value={this.state.ID} type="number" name="ID" placeholder="ID" required />
-                            </Col>
-                            <Col>
-                                <Label for="">Sex</Label>
-                                <select onChange={this.handleInput} value={this.state.sex} className="form-control" name="sex" required>
-                                    <option>Female</option>
-                                    <option>Male</option>
-                                </select>
                             </Col>
                         </Row>
 
@@ -192,10 +145,6 @@ class CreateUserForm extends React.Component {
                             <Col>
                                 <Label for="">Nombre</Label>
                                 <Input onChange={this.handleInput} value={this.state.name} type="text" name="name" placeholder="Nombre" required />
-                            </Col>
-                            <Col>
-                                <Label for="">Apellido</Label>
-                                <Input onChange={this.handleInput} value={this.state.lastname} type="text" name="lastname" placeholder="Apellido" required />
                             </Col>
                         </Row>
                         <Label for="">Email</Label>

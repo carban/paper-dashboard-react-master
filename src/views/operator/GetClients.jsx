@@ -297,7 +297,7 @@ class GetClients extends React.Component {
                         <Modal md="7" isOpen={this.state.modal} toggle={this.closeToggle} className="danger">
                             <ModalHeader toggle={this.closeToggle}>Edit User</ModalHeader>
                             <ModalBody>
-                                <CreateClientForm submitAction={this.editUser} user={this.state.user} />
+                                <CreateClientForm submitAction={this.editUser} user={this.state.user} editMode={true}/>
                             </ModalBody>
                         </Modal>
                     </div>

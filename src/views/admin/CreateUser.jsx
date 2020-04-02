@@ -73,7 +73,7 @@ class CreateUser extends React.Component {
                     <Col md="6" >
                         <Card>
                             <CardBody>
-                                <CreateUserForm submitAction={this.createEle} editMode={true} />
+                                <CreateUserForm submitAction={this.createEle} editMode={false} />
                             </CardBody>
                         </Card>
                     </Col>
