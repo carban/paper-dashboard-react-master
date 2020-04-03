@@ -9,16 +9,18 @@ class CreateUserForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.user || {
-            type: 'operador',
-            ID: '',
+            user_type: 'operador',
+            id_user: '',
             name: '',
             email: '',
-            adress: '',
-            neighborhood: '',
-            stratum: '',
+            password: 'loquendo',
             phone: '',
-            date: '',
-            state: true,
+            address: '',
+            neighborhood: '',
+            stratus: '',
+            is_active: true,
+            is_staff: true,
+            is_superuser: false
         }
     }
 
@@ -26,12 +28,20 @@ class CreateUserForm extends React.Component {
 
         var val = e.target.value;
 
-        if (e.target.name === "state") {
+        if (e.target.name === "is_active") {
             if (val === "Activo") {
                 val = true;
             } else {
                 val = false;
             }
+        }
+
+        if (e.target.name === "stratus") {
+            val = parseInt(val);
+        }
+
+        if (e.target.name === "user_type") {
+            val = parseInt(val);
         }
 
         this.setState({
@@ -55,16 +65,18 @@ class CreateUserForm extends React.Component {
         this.cleanForm();
 
         this.setState({
-            type: 'operador',
-            ID: '',
+            user_type: 'operador',
+            id_user: '',
             name: '',
             email: '',
-            adress: '',
-            neighborhood: '',
-            stratum: '',
+            password: 'loquendo',
             phone: '',
-            date: '',
-            state: true,
+            address: '',
+            neighborhood: '',
+            stratus: '',
+            is_active: true,
+            is_staff: true,
+            is_superuser: false
         });
     }
 
@@ -73,55 +85,53 @@ class CreateUserForm extends React.Component {
         const addBtn = (!this.props.user) ? <Button color="success">Add</Button> : <Button color="success">Edit</Button>;
 
         const showStateAttr = this.props.editMode ? <div> <Label for="">Estado</Label>
-            <select onChange={this.handleInput} value={this.state.state} className="form-control" name="state" required>
+            <select onChange={this.handleInput} value={this.state.is_active} className="form-control" name="is_active" required>
                 <option>Activo</option>
                 <option>Inactivo</option>
             </select>
         </div> : true
 
-        const aditional = (this.state.type === 'Cliente') ? <div>
+        const aditional = (this.state.user_type === 'Cliente') ? <div>
             <center style={{ marginTop: "2em" }}>Aditional Information</center>
 
             <Row>
                 <Col>
                     <Label for="">Tipo</Label>
-                    <select onChange={this.handleInputClient} value={this.state.client.typeCli} className="form-control" name="typeCli" required>
+                    <select onChange={this.handleInputClient} value={this.state.client.type_client} className="form-control" name="type_client" required>
                         <option>Natural</option>
                         <option>Juridica</option>
                     </select>
                 </Col>
                 <Col>
                     <Label for="">Tasa Interes mora</Label>
-                    <Input onChange={this.handleInputClient} value={this.state.client.tasa_interes_Mora} type="number" name="tasa_interes_Mora" placeholder="Tasa Interes mora" required />
+                    <Input onChange={this.handleInputClient} value={this.state.client.interes_mora} type="number" name="interes_mora" placeholder="Tasa Interes mora" required />
                 </Col>
             </Row>
 
             <Row>
                 <Col>
                     <Label for="">Ciclo</Label>
-                    <Input onChange={this.handleInputClient} value={this.state.client.ciclo} type="number" name="ciclo" placeholder="ciclo" required />
+                    <Input onChange={this.handleInputClient} value={this.state.client.cycle} type="number" name="cycle" placeholder="ciclo" required />
                 </Col>
                 <Col>
                     <Label for="">Numero de contrato</Label>
-                    <Input onChange={this.handleInputClient} value={this.state.client.contrato} type="text" name="contrato" placeholder="contrato" required />
+                    <Input onChange={this.handleInputClient} value={this.state.client.contrat_number} type="text" name="contrat_number" placeholder="contrato" required />
                 </Col>
             </Row>
 
             <Row>
                 <Col>
                     <Label for="">Facturacion</Label>
-                    <Input onChange={this.handleInputClient} value={this.state.client.facturacion} type="number" name="facturacion" placeholder="facturacion" required />
+                    <Input onChange={this.handleInputClient} value={this.state.client.billing} type="number" name="billing" placeholder="facturacion" required />
                 </Col>
                 <Col>
                     <Label for="">Estado Financiero</Label>
-                    <select onChange={this.handleInputClient} value={this.state.client.estado_financiero} className="form-control" name="estado_financiero" required>
+                    <select onChange={this.handleInputClient} value={this.state.client.financial_state} className="form-control" name="financial_state" required>
                         <option>Mora</option>
                         <option>No Mora</option>
                     </select>
                 </Col>
             </Row>
-            <Label for="">ID contador</Label>
-            <Input onChange={this.handleInputClient} value={this.state.client.ID_contador} type="number" name="ID_contador" placeholder="ID_contador" required />
 
         </div> : true
 
@@ -130,14 +140,14 @@ class CreateUserForm extends React.Component {
                 <FormGroup>
                     <div>
                         <Label for="">Tipo de usuario</Label>
-                        <select onChange={this.handleInput} value={this.state.type} className="form-control" name="type" required>
-                            <option>Operador</option>
-                            <option>Gerente</option>
+                        <select onChange={this.handleInput} value={this.state.user_type} className="form-control" name="user_type" required>
+                            <option value = "2">Operador</option>
+                            <option value = "3">Gerente</option>
                         </select>
                         <Row>
                             <Col>
                                 <Label for="">ID</Label>
-                                <Input onChange={this.handleInput} value={this.state.ID} type="number" name="ID" placeholder="ID" required />
+                                <Input onChange={this.handleInput} value={this.state.id_user} type="number" name="id_user" placeholder="ID" required />
                             </Col>
                         </Row>
 
@@ -153,7 +163,7 @@ class CreateUserForm extends React.Component {
                         <Row>
                             <Col>
                                 <Label for="">Direccion</Label>
-                                <Input onChange={this.handleInput} value={this.state.adress} type="text" name="adress" placeholder="Direccion" required />
+                                <Input onChange={this.handleInput} value={this.state.address} type="text" name="address" placeholder="Direccion" required />
                             </Col>
                             <Col>
                                 <Label for="">Barrio</Label>
@@ -161,14 +171,12 @@ class CreateUserForm extends React.Component {
                             </Col>
                             <Col>
                                 <Label for="">Estrato</Label>
-                                <Input onChange={this.handleInput} value={this.state.stratum} type="number" name="stratum" placeholder="Estrato" required />
+                                <Input onChange={this.handleInput} value={this.state.stratus} type="number" name="stratus" placeholder="Estrato" required />
                             </Col>
                         </Row>
 
                         <Label for="">Telefono</Label>
                         <Input onChange={this.handleInput} value={this.state.phone} type="number" name="phone" placeholder="Telefono" required />
-                        <Label for="">Fecha de Nacimiento</Label>
-                        <Input onChange={this.handleInput} value={this.state.date} type="date" name="date" placeholder="Fecha" required />
                         {showStateAttr}
                         {aditional}
                     </div>
