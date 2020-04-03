@@ -77,7 +77,6 @@ class GetClients extends React.Component {
                 <th>{p.user.name}</th>
                 <th>{p.user.phone}</th>
                 <th>{p.user.email}</th>
-                <th>{p.user.is_active}</th>
                 <th>
                     <Button color="warning" onClick={() => this.openToggle(p)}>
                         <i className="nc-icon nc-zoom-split" />
@@ -108,7 +107,7 @@ class GetClients extends React.Component {
                                                 <th>Name</th>
                                                 <th>Phone</th>
                                                 <th>Email</th>
-                                                <th>active</th>
+                                                <th>Review</th>
                                             </tr>
                                         </thead>
                                         <tbody>
