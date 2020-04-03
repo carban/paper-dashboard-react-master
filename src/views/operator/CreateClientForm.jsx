@@ -9,38 +9,89 @@ class CreateClientForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.user || {
-            ID: '',
-            name: '',
-            email: '',
-            adress: '',
-            phone: '',
-            date: '',
-            state: true,
-            client: {
-                typeCli: 1,
-                tasa_interes_Mora: 2.0,
-                ciclo: 1,
-                contrato: '',
-                facturacion: '',
-                estado_financiero: '',
-                ID_contador: ''
+            // id_user: "",
+            // name: "",
+            // email: "",
+            // password: "loquendo",
+            // phone: "",
+            // address: "",
+            // neighborhood: "",
+            // stratus: null,
+            // is_active: true,
+            // is_staff: false,
+            // is_superuser: false,
+            // client: {
+            //     type_client: 1,
+            //     interes_mora: null,
+            //     cycle: "",
+            //     contrat_number: null,
+            //     financial_state: "mora",
+            //     billing: "",
+            // }
+            type_client: 1,
+            interes_mora: null,
+            cycle: "",
+            contrat_number: null,
+            financial_state: "mora",
+            billing: "",
+            user: {
+                id_user: "",
+                name: "",
+                email: "",
+                password: "loquendo",
+                phone: "",
+                address: "",
+                neighborhood: "",
+                stratus: null,
+                is_active: true,
+                is_staff: false,
+                is_superuser: false,
             }
-        }
-    }
 
-    handleInput = e => {
-        this.setState({
-            [e.target.name]: e.target.value
-        });
+        }
     }
 
     handleInputClient = e => {
 
-        var { client } = { ...this.state };
-        client[e.target.name] = e.target.value;
+        var val = e.target.value;
+
+        // Pre Process ////////////////////////
+        if (e.target.name === "type_client") {
+            val = parseInt(val);
+        } else if (e.target.name === "interes_mora") {
+            val = parseFloat(val);
+        } else if (e.target.name === "contrat_number") {
+            val = parseInt(val);
+        }
+        ////////////////////////////////////////////////
 
         this.setState({
-            client: client
+            [e.target.name]: val
+        });
+    }
+
+    handleInput = e => {
+
+        var { user } = { ...this.state };
+
+        var val = e.target.value;
+
+        // Pre Process ////////////////////////
+        if (e.target.name === "is_active") {
+            if (val === "Activo") {
+                val = true;
+            } else {
+                val = false;
+            }
+        } else if (e.target.name === "stratus") {
+            val = parseInt(val);
+        }
+        ////////////////////////////////////////////////
+
+        user[e.target.name] = val;
+
+        this.setState({
+            user: user
         });
 
     }
@@ -51,31 +102,30 @@ class CreateClientForm extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-
-        var theState;
-
-        theState = { ...this.state };
-        delete theState.client;
-        this.props.submitAction(theState);
+        
+        this.props.submitAction(this.state);
 
         this.cleanForm();
 
         this.setState({
-            ID: '',
-            name: '',
-            email: '',
-            adress: '',
-            phone: '',
-            date: '',
-            state: true,
-            client: {
-                typeCli: 1,
-                tasa_interes_Mora: 2.0,
-                ciclo: 1,
-                contrato: '',
-                facturacion: '',
-                estado_financiero: '',
-                ID_contador: ''
+            type_client: 1,
+            interes_mora: null,
+            cycle: "",
+            contrat_number: null,
+            financial_state: "mora",
+            billing: "",
+            user: {
+                id_user: "",
+                name: "",
+                email: "",
+                password: "loquendo",
+                phone: "",
+                address: "",
+                neighborhood: "",
+                stratus: null,
+                is_active: true,
+                is_staff: false,
+                is_superuser: false,
             }
         });
     }
@@ -85,7 +135,7 @@ class CreateClientForm extends React.Component {
         const addBtn = (!this.props.user) ? <Button color="warning">Add</Button> : <Button color="warning">Edit</Button>;
 
         const showStateAttr = this.props.editMode ? <div> <Label for="">Estado</Label>
-            <select onChange={this.handleInput} value={this.state.state} className="form-control" name="state" required>
+            <select onChange={this.handleInput} value={this.state.user.is_active} className="form-control" name="is_active" required>
                 <option>Activo</option>
                 <option>Inactivo</option>
             </select>
@@ -99,69 +149,84 @@ class CreateClientForm extends React.Component {
                 <Row>
                     <Col>
                         <Label for="">Tipo</Label>
-                        <select onChange={this.handleInputClient} value={this.state.client.typeCli} className="form-control" name="typeCli" required>
-                            <option>Natural</option>
-                            <option>Juridica</option>
+                        <select onChange={this.handleInputClient} value={this.state.type_client} className="form-control" name="type_client" required>
+                            <option value="1">Natural</option>
+                            <option value="2">Juridica</option>
                         </select>
                     </Col>
                     <Col>
                         <Label for="">Tasa Interes mora</Label>
-                        <Input onChange={this.handleInputClient} value={this.state.client.tasa_interes_Mora} type="number" name="tasa_interes_Mora" placeholder="Tasa Interes mora" required />
+                        <Input onChange={this.handleInputClient} value={this.state.interes_mora} type="number" step="0.01" name="interes_mora" placeholder="Tasa Interes mora" required />
                     </Col>
                 </Row>
 
                 <Row>
                     <Col>
                         <Label for="">Ciclo</Label>
-                        <Input onChange={this.handleInputClient} value={this.state.client.ciclo} type="number" name="ciclo" placeholder="ciclo" required />
+                        <Input onChange={this.handleInputClient} value={this.state.cycle} type="number" name="cycle" placeholder="ciclo" required />
                     </Col>
                     <Col>
                         <Label for="">Numero de contrato</Label>
-                        <Input onChange={this.handleInputClient} value={this.state.client.contrato} type="text" name="contrato" placeholder="contrato" required />
+                        <Input onChange={this.handleInputClient} value={this.state.contrat_number} type="text" name="contrat_number" placeholder="contrato" required />
                     </Col>
                 </Row>
 
                 <Row>
                     <Col>
                         <Label for="">Facturacion</Label>
-                        <Input onChange={this.handleInputClient} value={this.state.client.facturacion} type="number" name="facturacion" placeholder="facturacion" required />
+                        <Input onChange={this.handleInputClient} value={this.state.billing} type="number" name="billing" placeholder="facturacion" required />
                     </Col>
                     <Col>
                         <Label for="">Estado Financiero</Label>
-                        <select onChange={this.handleInputClient} value={this.state.client.estado_financiero} className="form-control" name="estado_financiero" required>
-                            <option>Mora</option>
-                            <option>No Mora</option>
+                        <select onChange={this.handleInputClient} value={this.state.financial_state} className="form-control" name="financial_state" required>
+                            <option value="Mora">Mora</option>
+                            <option value="No Mora">No Mora</option>
                         </select>
                     </Col>
                 </Row>
-                <Label for="">ID contador</Label>
-                <Input onChange={this.handleInputClient} value={this.state.client.ID_contador} type="number" name="ID_contador" placeholder="ID_contador" required />
 
             </div>
 
         return (
             <Form id="form" onSubmit={this.handleSubmit}>
                 <FormGroup>
-                    <Row>
-                        <Col>
-                            <Label for="">ID</Label>
-                            <Input onChange={this.handleInput} value={this.state.ID} type="number" name="ID" placeholder="ID" required />
-                        </Col>
-                    </Row>
+                    <div>
+                        <Row>
+                            <Col>
+                                <Label for="">ID</Label>
+                                <Input onChange={this.handleInput} value={this.state.user.id_user} type="number" name="id_user" placeholder="ID" required />
+                            </Col>
+                        </Row>
 
-                    <Label for="">Nombre</Label>
-                    <Input onChange={this.handleInput} value={this.state.name} type="text" name="name" placeholder="Nombre" required />
-                    <Label for="">Email</Label>
-                    <Input onChange={this.handleInput} value={this.state.email} type="email" name="email" placeholder="Email" required />
-                    <Label for="">Direccion</Label>
-                    <Input onChange={this.handleInput} value={this.state.adress} type="text" name="adress" placeholder="Direccion" required />
-                    <Label for="">Telefono</Label>
-                    <Input onChange={this.handleInput} value={this.state.phone} type="number" name="phone" placeholder="Telefono" required />
-                    <Label for="">Fecha de Nacimiento</Label>
-                    <Input onChange={this.handleInput} value={this.state.date} type="date" name="date" placeholder="Fecha" required />
-                    {showStateAttr}
-                    {aditional}
+                        <Row>
+                            <Col>
+                                <Label for="">Nombre</Label>
+                                <Input onChange={this.handleInput} value={this.state.user.name} type="text" name="name" placeholder="Nombre" required />
+                            </Col>
+                        </Row>
+                        <Label for="">Email</Label>
+                        <Input onChange={this.handleInput} value={this.state.user.email} type="email" name="email" placeholder="Email" required />
 
+                        <Row>
+                            <Col>
+                                <Label for="">Direccion</Label>
+                                <Input onChange={this.handleInput} value={this.state.user.address} type="text" name="address" placeholder="Direccion" required />
+                            </Col>
+                            <Col>
+                                <Label for="">Barrio</Label>
+                                <Input onChange={this.handleInput} value={this.state.user.neighborhood} type="text" name="neighborhood" placeholder="Barrio" required />
+                            </Col>
+                            <Col>
+                                <Label for="">Estrato</Label>
+                                <Input onChange={this.handleInput} value={this.state.user.stratus} type="number" name="stratus" placeholder="Estrato" required />
+                            </Col>
+                        </Row>
+
+                        <Label for="">Telefono</Label>
+                        <Input onChange={this.handleInput} value={this.state.user.phone} type="number" name="phone" placeholder="Telefono" required />
+                        {showStateAttr}
+                        {aditional}
+                    </div>
                 </FormGroup>
                 {addBtn}
             </Form>
